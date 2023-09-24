@@ -53,7 +53,7 @@ spinner() {
 BASENAME=$(basename "$1" .mbox)
 
 # Create the output filename by appending "-dd.mbox" to the base name
-OUTPUT_FILE="${BASENAME}-dd.mbox"
+OUTPUT_FILE="$(echo "${BASENAME}-dd.mbox" | tr '[:upper:]' '[:lower:]')"
 
 # Check for existing output file
 if [ -f "$OUTPUT_FILE" ]; then
