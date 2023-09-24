@@ -84,4 +84,4 @@ echo "Total messages removed (duplicates): $REMOVED_COUNT"
 echo "-----------------------------------"
 
 # Clean up the hash file
-rm /tmp/hashes.tmp
+[ -f /tmp/hashes.tmp ] && rm /tmp/hashes.tmp 2>/dev/null
