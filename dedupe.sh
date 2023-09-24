@@ -16,14 +16,19 @@
 # with "-dd.mbox". This file will contain the deduplicated messages.
 # 
 # Dependency:
-# This script relies on "ddmbox.sh" to process individual messages. Ensure that 
-# "ddmbox.sh" is located in the same directory as this script and is executable.
+# - This script relies on "ddmbox.sh" to process individual messages. Ensure that 
+#   "ddmbox.sh" is located in the same directory as this script and is executable.
+# - The script requires the 'reformail' package to be installed. This package is 
+#   part of the 'procmail' suite and can be installed via your system's package manager.
 #
 # Notes:
 # - Ensure you have enough disk space in the directory where the script is run.
 # - Always backup your original mbox file before running the script.
 # - The script uses a temporary directory named "temp_dedupe_dir" for its 
 #   operations, which is created in the temp directory and is removed at the end.
+# - If you have used LibPST (included in readpst package in Linux) to convert an
+#   MS Outlook PST file to mbox format, it can leave some messages minus the message ID.
+#   In this case, the script will fall back on the LibPST unique identifier.
 # 
 # Author: David Rahrer
 # Date: 09-23-2023
